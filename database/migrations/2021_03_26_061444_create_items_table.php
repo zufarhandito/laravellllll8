@@ -15,13 +15,15 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
             $table->string('name');
+            $table->string('code');
             $table->integer('harga_beli');
             $table->integer('harga_jual');
-            $table->string('category');
+
             $table->string('description')->nullable();
             $table->string('item_photo_path')->nullable();
+            $table->integer('discount')->nullable();
+            $table->string('promo')->nullable();
             $table->timestamps();
         });
     }
